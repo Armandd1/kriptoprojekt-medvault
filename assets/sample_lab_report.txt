@@ -1,0 +1,29 @@
+===================================================================
+ST. CAMILLUS ONKOLÓGIAI ÉS TÁVDIAGNOSZTIKAI KÖZPONT
+SZIGORÚAN BIZALMAS ORVOSI ZÁRÓJELENTÉS ÉS BIO-AUDIT JEGYZŐKÖNYV
+===================================================================
+
+PÁCIENS ADATAI:
+- Név: Kovács Péter
+- Páciens Azonosító: #MED-8042
+- Születési dátum: 1978. 04. 12. (Életkor: 48 év)
+- Kezelőorvos: Dr. Kovács Béla Ph.D., vezető onkológus sebész
+- Dátum: 2026. október 24.
+- Osztály: Mellkassebészeti és Onkológiai Klinika
+
+KLINIKAI DIAGNÓZIS ÉS LELET:
+- Vizsgálat típusa: Alacsony dózisú mellkasi CT és szövettani biopszia
+- Megállapítás: A bal tüdőmező felső lebenyében (S1 szegmens) 22x18 mm-es, 
+  spiculált szélű, fokozott kontrasztanyag-halmozást mutató szolid nodulus ábrázolódik.
+- Szövettani vizsgálat eredménye: Adenocarcinoma pulmonis (Malignus elváltozás).
+- Daganatmarker CEA szint: 14.8 ng/mL (Referencia: 0.0 - 3.4 ng/mL - ERŐSEN POZITÍV)
+- Vércukorszint: 5.4 mmol/L (Normál)
+- Vércsoport: A Rh+ (Pozitív)
+
+TERÁPIÁS ÉS MŰTÉTI DÖNTÉS:
+- Műtéti indikáció: SÜRGŐS VATS bal felső lobectomia és mediastinalis lymphadenectomia.
+- Tervezett műtét időpontja: 2026. október 26. 08:00
+- FIGYELMEZTETÉS: Az orvosi lelet bármilyen manipulációja közvetlen életveszélyt okoz!
+
+Hitelesítve a MedVault Zero-Knowledge Kriptográfiai Rendszerével (AES-256-GCM + GMAC).
+===================================================================

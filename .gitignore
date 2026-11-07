@@ -1,0 +1,26 @@
+# Byte-compiled / cache fájlok
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Generált kulcsok és titkosított tároló (futáskor automatikusan létrejönnek)
+storage/
+*.pem
+*.key
+*.medvault
+
+# Virtuális környezet és titkok
+.venv/
+venv/
+env/
+.env
+passwords.env
+
+# IDE és OS fájlok
+.vscode/
+.idea/
+.streamlit/
+.DS_Store
+Thumbs.db
+
