@@ -1,8 +1,3 @@
-"""
-MedVault – Manipulációbiztos Orvosi Lelet- és Képtár
-Oktató: Dr. Márton Gyöngyvér | Hallgató: Tőtős Armand
-"""
-
 import html
 import io
 import os
@@ -29,19 +24,6 @@ st.set_page_config(page_title="MedVault", page_icon="🛡️", layout="wide")
 
 st.markdown("""
 <style>
-    html, body, [class*="css"], .stApp {
-        font-family: 'Inter', -apple-system, sans-serif !important;
-        background-color: #f8fafc !important;
-        color: #0f172a !important;
-    }
-    header[data-testid="stHeader"] { background-color: #f8fafc !important; }
-    .app-header {
-        display: flex; justify-content: space-between; align-items: center;
-        background: #ffffff; padding: 16px 24px; border: 1px solid #e2e8f0;
-        border-radius: 12px; margin-bottom: 24px;
-    }
-    .app-title { font-size: 1.4rem; font-weight: 700; color: #0f172a; }
-    .app-meta { font-size: 0.85rem; color: #64748b; text-align: right; }
     .card {
         background: #ffffff; border: 1px solid #e2e8f0;
         border-radius: 12px; padding: 16px 20px; margin-bottom: 14px;
@@ -74,21 +56,6 @@ def sanitize_filename(p_id: str, file_name: str) -> str:
     clean_file = os.path.basename(file_name) or "lelet.bin"
     return f"{clean_id}_{clean_file}.medvault"
 
-
-st.markdown("""
-<div class="app-header">
-    <div>
-        <div class="app-title">🛡️ MedVault</div>
-        <div style="font-size: 0.85rem; color: #64748b; margin-top: 2px;">
-            Kliensoldali Manipulációbiztos Orvosi Lelet- és Képtár (Argon2id + AES-256-GCM + RSA-PSS)
-        </div>
-    </div>
-    <div class="app-meta">
-        <div><strong>Témavezető:</strong> Dr. Márton Gyöngyvér</div>
-        <div><strong>Hallgató:</strong> Tőtős Armand</div>
-    </div>
-</div>
-""", unsafe_allow_html=True)
 
 tab1, tab2, tab3 = st.tabs(["Titkosítás", "Visszafejtés", "Kripto Labor"])
 
@@ -221,7 +188,7 @@ with tab2:
                 decrypted, meta = decrypt_medical_record(vault_data, dec_pwd)
                 st.markdown(
                     "<div style='margin-bottom: 12px;'>"
-                    "<span class='badge badge-blue'>✍️ Érvényes RSA-2048 (PSS) Orvosi Digitális Aláírás</span>"
+                    "<span class='badge badge-blue'>✍️ Érvényes RSA-2048 (PSS) Digitális Aláírás</span>"
                     "<span class='badge badge-green'>✅ Érvényes GMAC címke (Sértetlen lelet és AAD fejléc)</span>"
                     "</div>",
                     unsafe_allow_html=True,
@@ -247,10 +214,8 @@ with tab2:
 
 # 3. FÜL: KRIPTO LABOR (TÁMADÁSSZIMULÁCIÓK)
 with tab3:
-    st.markdown("##### Kriptográfiai Támadásszimulációk")
-
     # 1. Képi szivárgás (ECB vs GCM)
-    with st.expander("1. Orvosi Kép ECB Szivárgása (5. előadás)", expanded=True):
+    with st.expander("1. Orvosi Kép ECB Szivárgása", expanded=True):
         st.write("Az ECB mód determinisztikus jellege miatt a daganat és a csontok kontúrja rejtjelezve is látható marad.")
         sample_xray = os.path.join(ASSETS_DIR, "sample_chest_xray.bmp")
 
@@ -281,7 +246,7 @@ with tab3:
     orig_vbytes = st.session_state["lab_ref_vault"]
 
     # 2. Bit-Flipping manipuláció
-    with st.expander("2. Bit-Flipping Manipuláció & GMAC Védelem (4. előadás)"):
+    with st.expander("2. Bit-Flipping Manipuláció & GMAC Védelem"):
         st.write("1 bit módosítása a rejtjelezett állományban (`XOR 0x01`). Az AES-GCM GMAC címkéje azonnal elutasítja.")
 
         cb1, cb2 = st.columns(2)
@@ -318,7 +283,7 @@ with tab3:
                     )
 
     # 3. Fejléc (AAD) manipuláció
-    with st.expander("3. Páciens Fejléc Manipuláció & AAD Védelem (5. előadás)"):
+    with st.expander("3. Páciens Fejléc Manipuláció & AAD Védelem"):
         st.write("A páciens azonosító átírása a nyílt fejlécben. A GMAC címke a nyílt fejlécet is védi AAD-ként.")
 
         ca1, ca2 = st.columns(2)

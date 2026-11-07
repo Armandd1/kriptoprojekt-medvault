@@ -20,7 +20,5 @@ passwords.env
 # IDE és OS fájlok
 .vscode/
 .idea/
-.streamlit/
 .DS_Store
 Thumbs.db
-
