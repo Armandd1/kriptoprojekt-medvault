@@ -277,10 +277,13 @@ with tab3:
                     )
                     st.error("Nem vette észre a hibát!")
                 except CryptoIntegrityError:
-                    st.markdown(
-                        "<span class='badge badge-green'>🛡️ Sikeres védelem: GMAC hiba miatt a megnyitás megtagadva!</span>",
-                        unsafe_allow_html=True,
-                    )
+                    st.session_state["t_blocked"] = True
+
+            if st.session_state.get("t_blocked"):
+                st.markdown(
+                    "<span class='badge badge-green'>🛡️ Sikeres védelem: GMAC hiba miatt a megnyitás megtagadva!</span>",
+                    unsafe_allow_html=True,
+                )
 
     # 3. Fejléc (AAD) manipuláció
     with st.expander("3. Páciens Fejléc Manipuláció & AAD Védelem"):
@@ -313,7 +316,10 @@ with tab3:
                     )
                     st.error("Nem vette észre a hibát!")
                 except CryptoIntegrityError:
-                    st.markdown(
-                        "<span class='badge badge-green'>🛡️ Sikeres védelem: AAD/GMAC hiba miatt a megnyitás megtagadva!</span>",
-                        unsafe_allow_html=True,
-                    )
+                    st.session_state["h_blocked"] = True
+
+            if st.session_state.get("h_blocked"):
+                st.markdown(
+                    "<span class='badge badge-green'>🛡️ Sikeres védelem: AAD/GMAC hiba miatt a megnyitás megtagadva!</span>",
+                    unsafe_allow_html=True,
+                )
